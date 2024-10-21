@@ -4,8 +4,8 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "ts-node src/server.ts",
-    "start:dev": "ts-node-dev --respawn src/server.ts",
-    "start:prod": "npm run build && node src/server.ts",
+    "start:dev": "ts-node src/server.ts",
+    "start:prod": "npm run build && ts-node src/server.ts",
     "start:multi": "ts-node src/server.ts --multi",
     "build": "tsc",
     "test": "jest"

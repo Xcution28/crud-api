@@ -1,5 +1,90 @@
 # Assignment: CRUD API
 
+## Instruction
+
+Type `npm run start:dev` in console to run application in development mode
+or `npm run start:prod` to get built bundle.
+
+Recommend use Postman for testing endpoints.
+
+### Create a New User
+
+Method: POST
+
+URL: `http://localhost:4000/api/users`
+
+Request Body:
+
+`{
+"username": "testuser",
+"age": 30,
+"hobbies": ["reading", "coding"]
+}`
+
+Response:
+
+201 Created: Returns the created user with an ID.
+
+400 Bad Request: If required fields are missing.
+
+500 Internal Server Error: In case of a server error.
+
+### Get User by ID
+
+Method: GET
+
+URL: `http://localhost:4000/api/users/{userId}`
+
+Response:
+
+200 OK: Returns the user with the specified ID.
+
+404 Not Found: If the user is not found.
+
+400 Bad Request: If the ID format is invalid.
+
+500 Internal Server Error: In case of a server error.
+
+### Update User by ID
+
+Method: PUT
+
+URL: `http://localhost:4000/api/users/{userId}`
+
+Request Body:
+
+`{
+"username": "testuser1",
+"age": 31,
+"hobbies": ["reading", "coding", "traveling"]
+}`
+
+Response:
+
+200 OK: Returns the updated user.
+
+404 Not Found: If the user is not found.
+
+400 Bad Request: If the ID format is invalid or required fields are missing.
+
+500 Internal Server Error: In case of a server error.
+
+### Delete User by ID
+
+Method: DELETE
+
+URL: `http://localhost:4000/api/users/{userId}`
+
+Response:
+
+204 No Content: If the user is successfully deleted.
+
+404 Not Found: If the user is not found.
+
+400 Bad Request: If the ID format is invalid.
+
+500 Internal Server Error: In case of a server error.
+
 ## Description
 
 Task is to implement simple CRUD API using in-memory database underneath.
