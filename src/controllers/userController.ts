@@ -1,4 +1,4 @@
-import { validate as uuidValidate } from 'uuid';
+import { v4 as uuidv4, validate as uuidValidate } from 'uuid';
 import { UserData } from "../types";
 import { User } from '../models/userModel';
 
@@ -18,7 +18,7 @@ export const createUser = (userData: Omit<UserData, 'id'>): UserData => {
     if (!username || !age || !hobbies) {
         throw new Error('Missing required fields');
     }
-    const newUser = { id: username, age, hobbies };
+    const newUser: UserData = { id: uuidv4(), username, age, hobbies };
     return User.create(newUser);
 };
 
